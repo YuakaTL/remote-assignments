@@ -1,0 +1,137 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "appworks",
+    "dateExported": "2023-02-24T16:42:12.506Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "647ca871-7afc-4b59-aff7-bc6c309b6dbb",
+            "colId": "b3f860dc-4ae8-4762-85f8-05f4eb0f3dfb",
+            "containerId": "",
+            "name": "index",
+            "url": "http://35.75.125.109/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-02-24T14:10:06.551Z",
+            "modified": "2023-02-24T16:40:55.537Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json, text/javascript, */*; q=0.01"
+                },
+                {
+                    "name": "Accept-Encoding",
+                    "value": "gzip, deflate, br"
+                },
+                {
+                    "name": "Accept-Language",
+                    "value": "zh-TW,zh;q=0.9"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "DNT",
+                    "value": "1"
+                },
+                {
+                    "name": "Host",
+                    "value": "www.bestwise.com.tw"
+                },
+                {
+                    "name": "Referer",
+                    "value": "https://www.bestwise.com.tw/book/book.aspx?ib=8882"
+                },
+                {
+                    "name": "Sec-Fetch-Dest",
+                    "value": "empty"
+                },
+                {
+                    "name": "Sec-Fetch-Mode",
+                    "value": "cors"
+                },
+                {
+                    "name": "Sec-Fetch-Site",
+                    "value": "same-origin"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+                },
+                {
+                    "name": "X-Requested-With",
+                    "value": "XMLHttpRequest"
+                },
+                {
+                    "name": "sec-ch-ua",
+                    "value": "\"Google Chrome\";v=\"107\", \"Chromium\";v=\"107\", \"Not=A?Brand\";v=\"24\""
+                },
+                {
+                    "name": "sec-ch-ua-mobile",
+                    "value": "?0"
+                },
+                {
+                    "name": "sec-ch-ua-platform",
+                    "value": "\"macOS\""
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5fba3e85-9b97-45c0-b2a1-650005051113",
+            "colId": "b3f860dc-4ae8-4762-85f8-05f4eb0f3dfb",
+            "containerId": "",
+            "name": "healthcheck",
+            "url": "http://35.75.125.109/healthcheck",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-02-24T14:10:21.176Z",
+            "modified": "2023-02-24T16:41:04.438Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4638b0eb-ec09-451d-9770-8b6e2750b198",
+            "colId": "b3f860dc-4ae8-4762-85f8-05f4eb0f3dfb",
+            "containerId": "",
+            "name": "get user",
+            "url": "http://35.75.125.109/users/?id=1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-02-24T14:10:29.806Z",
+            "modified": "2023-02-24T16:41:15.519Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "7ae68d20-d8a8-4bb0-8d6d-c4b9f5ea63e4",
+            "colId": "b3f860dc-4ae8-4762-85f8-05f4eb0f3dfb",
+            "containerId": "",
+            "name": "sign up",
+            "url": "http://35.75.125.109/users",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-02-24T14:10:34.732Z",
+            "modified": "2023-02-24T16:41:26.990Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"test2\",\n  \"password\": \"Aa@\",\n  \"email\": \"test2@test.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
