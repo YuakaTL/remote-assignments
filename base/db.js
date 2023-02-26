@@ -10,6 +10,11 @@ const DB = {
 }
 
 // create the connection to database
-const connection = mysql.createConnection(DB);
+const promisePool = mysql.createPoolPromise({
+    ...DB,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+});
 
-module.exports = connection;
+module.exports = promisePool;

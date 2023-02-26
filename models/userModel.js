@@ -1,22 +1,26 @@
 const db = require('../base/db');
 
 const userModel = {
-    getById: (id, callback) => {
-        db.query(
-            'SELECT id, name, email FROM user WHERE id = ?', [id], callback
+    getById: async (id) => {
+        const [rows, fields] = await db.execute(
+            'SELECT id, name, email FROM user WHERE id = ?',
+            [id]
         );
+        return rows;
     },
-    getByEmail: (email, callback) => {
-        db.query(
-            'SELECT email FROM user WHERE email = ?', [email], callback
+    getByEmail: async (email) => {
+        const [rows, fields] = await db.execute(
+            'SELECT email FROM user WHERE email = ?',
+            [email]
         );
+        return rows;
     },
-    create: ({ name, email, password }, callback) => {
-        db.query(
+    create: async ({ name, email, password }) => {
+        const [rows, fields] = await db.execute(
             'INSERT INTO user (name, email, password) VALUES (?, ?, ?)',
             [name, email, password],
-            callback
         );
+        return rows;
     }
 }
 

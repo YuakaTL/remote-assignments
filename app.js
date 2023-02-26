@@ -5,9 +5,6 @@ var logger = require('morgan');
 const cors = require('cors');
 const { errorHandle } = require('./base/responseHandler');
 
-const Database = require('./base/db');
-Database.connect();
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
