@@ -2,37 +2,47 @@
 ## Description
 AppWorks Campus Program remote-assignments
 
+### Monorepo Structure
+This repository uses a monorepo structure, which means that multiple projects or applications are managed within a single repository. This approach allows for better collaboration and easier code sharing between teams, making it ideal for large organizations or complex software projects.
+
+### Yarn 3.0
+To manage dependencies in this repository, we use Yarn 3.0. Yarn is a popular package manager for JavaScript projects, and version 3.0 introduces several new features that make it even more powerful and efficient.
+
+By using Yarn 3.0 and a monorepo structure, we're able to streamline our development process and make it easier for developers to work together on complex projects.
+
 ## Environment requirements
 Before you can use this application, make sure that you have the following requirements installed:
-- Node.js (version 16 or higher)
-- Express (version 4 or higher)
+- Yarn 3.x
 
 ## How to use
-After making sure that your development environment meets the requirements, follow these steps to start the application:
-
-1. Clone this repository.
-2. Open a terminal and navigate to the project directory.
-3. Run the following command to install all required dependencies:
+To install the dependencies for all projects in this repository, run the following command in the root directory:
+### Installing Dependencies
 ```bash=
-npm install
+yarn install
 ```
-4. Configure the database by copying the `.env.example` file to `.env` and updating the values to match your database configuration.
-5. Run the following command to start the application:
-```bash=
-npm start
-```
-6. In your browser, enter the following URL to use the application:
-```bash=
-http://localhost:3000
-```
-## Features and Routes
-This Express application has the following features and routes:
+This command will install all dependencies for all projects in the repository.
 
-- `GET /`: Returns a JSON response with the server status and the current date and time in UTC format.
-- `GET /healthcheck`: Returns a JSON response with the server status.
-- `GET /users?id=`: Returns a JSON response with the user information based on the id query parameter. Uses the getUser method from the UserController.
-- `POST /users`: Creates a new user with the provided information in the request body. Uses the newUser method from the UserController.
+Or  you can use the following command to use previously cached dependencies:
+```bash=
+yarn install --immutable
+```
+This command will use the dependencies from the `.yarn/cache` directory that you have uploaded instead of downloading them from the network.
 
-The UserController contains the following methods:
-- `getUser`: Retrieves a user from the database based on the id query parameter and returns a JSON response with the user information and the current date and time in UTC format.
-- `newUser`: Validates and creates a new user with the provided information in the request body. Returns a JSON response with the new user information and the current date and time in UTC format.
+### Working with Workspaces
+This repository uses Yarn workspaces to manage dependencies and share code between projects. To run a command in a specific workspace, use the following command:
+```bash=
+yarn workspace <workspace-name> <command>
+```
+For example, to run the start command in the "client" workspace, use the following command:
+```bash=
+yarn workspace client start
+```
+
+> Ps. In addition to the monorepo structure and Yarn 3, this project also uses the concurrently package, which allows you to run multiple commands concurrently in the same terminal window.
+```bash=
+yarn start:dev
+```
+This command uses concurrently to run the start command in the `client` and `server` directories at the same time. This allows you to develop the front-end and back-end of your application simultaneously, without having to switch between different terminal windows.
+
+Please note that this command assumes that you have already installed the necessary dependencies for both the front-end and back-end applications. If you have not done so yet, you may need to run `yarn install` in both directories first.
+
