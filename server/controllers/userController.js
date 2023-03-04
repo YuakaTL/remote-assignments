@@ -41,7 +41,7 @@ const UserController = {
             return errorHandle(res, 400, 40001);
         }
 
-        if (RegExp(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d|.*[~!@#$%^&*()_\-+={}\[\]:;"<,>.?\/]).*$/).test(password) === false) {
+        if (RegExp(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[~!@#$%^&*()_+\-={}[\]:;'<>,.?\/]).*$/).test(password) === false) {
             return errorHandle(res, 400, 40004);
         }
 
